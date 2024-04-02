@@ -1,11 +1,14 @@
 require "./random_num.rb"
 
 class Question
-    attr_accessor :num1, :num2
+    
 
     include Random_num 
 
-    def initialize(num1, num2)
-
+    def self.ask_question()
+        num2 = Random_num.generate()
+        num1 = Random_num.generate()
+        
+        return ["what is #{num1} plus #{num2}?", num1 + num2]
     end
 end
